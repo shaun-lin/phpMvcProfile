@@ -12,4 +12,10 @@ class Controller
     {
         require_once '../app/views/' . $view . '.php';
     }
+
+    public function css($view)
+    {
+        require_once '../app/css/' . $view . '.css';
+        
+    }
 }

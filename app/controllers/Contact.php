@@ -6,4 +6,9 @@ class Contact extends Controller
     {
         echo 'contact index';
     }
+
+    public function testb()
+    {
+        echo 'contact testb';
+    }
 }
