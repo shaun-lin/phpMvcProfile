@@ -15,7 +15,7 @@ class App
 
         
         //file_exists 檢查檔案是否存在 
-        if( file_exists('../app/controllers/' . $url[0] . '.php' ))
+        if( file_exists('../app/resoure/controllers/' . $url[0] . '.php' ))
         {
             //存在 $controller替換呈現在url[0]
             $this->controller = $url[0];
@@ -24,7 +24,7 @@ class App
         }
 
         // 引入現在對應的controller
-        require_once '../app/controllers/' . $this->controller . '.php';
+        require_once '../app/resoure/controllers/' . $this->controller . '.php';
 
         $this->controller = new $this->controller;
 
@@ -35,12 +35,12 @@ class App
             if(method_exists($this->controller, $url[1])){
                 // 存在則取代 $this->method
                 $this->method = $url[1];
-                
+                // 移除url[1] 保持之後get $params 乾淨
+                unset($url[1]);
             }else{
                 echo 'method_doesn"t //'. $url[1] . '// exists<br>';
             }
-            // 移除url[1] 保持之後get $params 乾淨
-            unset($url[1]);
+            
         }
         //array_values 返回陣列值 但不保留原key值 將重新定義為0 1 2 3...
         // 確認是否有帶參數 有的話 array_values 沒有等於空陣列

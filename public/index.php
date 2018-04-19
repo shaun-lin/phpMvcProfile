@@ -1,6 +1,8 @@
+
 <?php
-    require_once '../app/init.php';
+    require_once '../app/resoure/init.php';
     $app = new App;
+
 
 
 

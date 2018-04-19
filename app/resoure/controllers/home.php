@@ -5,8 +5,8 @@ class Home extends Controller
 
     public function index($name= '')
     {
-       
-        
+        $this->view('temp/head_up', ['css'=> 'home/index']);
+        $this->view('temp/head_down', ['css'=> 'home/index']);
         $this->view('home/index', ['name' => $name]);
         
         
